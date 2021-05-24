@@ -1,6 +1,7 @@
 import React from 'react';
 import { Descriptions, Progress, Tag } from 'antd';
 import * as T from './type';
+import { padEnd } from 'lodash';
 
 interface IProps {
   formData: T.IFormInitValue;
@@ -15,11 +16,12 @@ const DataPreviewCard = (props: IProps) => {
       style={{
         width: '60%',
         margin: '0 auto',
-        border: '1px solid #aaa'
+        border: '1px solid #aaa',
+        padding: '10px'
       }}
       title="User Info">
       <Descriptions.Item label="UserName">{name}</Descriptions.Item>
-      <Descriptions.Item label="Telephone">
+      <Descriptions.Item label="Job Type">
         {
           ['be', 'fe'].includes(job) ? (
             <Tag color="magenta">研发</Tag>
