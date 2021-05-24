@@ -12,7 +12,7 @@ const layout = {
   wrapperCol: { span: 20 },
 };
 
-const initDefaultValue:T.IFormInitValue = {
+export const initDefaultValue:T.IFormInitValue = {
   name: 'James Blues',
   age: 32,
   job: 'fe'
