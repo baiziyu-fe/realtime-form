@@ -12,12 +12,17 @@ const layout = {
   wrapperCol: { span: 20 },
 };
 
+interface IProps {
+  setData: (value: T.IFormInitValue) => void;
+}
+
 export const initDefaultValue:T.IFormInitValue = {
   name: 'James Blues',
   age: 32,
   job: 'fe'
 }
-const CurrentStateForm = () => {
+const CurrentStateForm = (props: IProps) => {
+  const {setData} = props;
   const [formRef] = Form.useForm();
   const initValues = useMemo(() => getInitDefaultValue(initDefaultValue), [])
   return (
@@ -26,6 +31,9 @@ const CurrentStateForm = () => {
         {...layout}
         form={formRef}
         initialValues={initValues}
+        onValuesChange={(_, values) => {
+          setData(values);
+        }}
         style={{
           width: '60%',
           margin: '128px auto'
