@@ -1,7 +1,6 @@
 import React from 'react';
 import { Descriptions, Progress, Tag } from 'antd';
 import * as T from './type';
-import { padEnd } from 'lodash';
 
 interface IProps {
   formData: T.IFormInitValue;
